@@ -1,7 +1,7 @@
 import 'dart:convert';
 
 class Food {
-  //Variables que tiene el producto.
+  
   
   String name;
   String description;
@@ -13,7 +13,7 @@ class Food {
 
 
   String? id;
-  //Constructor del producto
+  
   Food(
       {required this.available,
       required this.name,
@@ -24,7 +24,14 @@ class Food {
       required this.restaurant,
       this.id});
 
-  //Metodos para mapear y transformar el producto en json o conseguirlo de uno existente.
+  get Urlimage {
+    if (this.picture != null) {
+      return picture;
+    }
+    return 'https://i.stack.imgur.com/GNhxO.png';
+  }
+
+ 
   factory Food.fromJson(String str) => Food.fromMap(json.decode(str));
 
   String toJson() => json.encode(toMap());
@@ -50,7 +57,7 @@ class Food {
         "tipus": type,
       };
 
-  //Metodo para crear una copia del producto
+
   Food copy() => Food(
       available: this.available,
       name: this.name,
@@ -61,3 +68,4 @@ class Food {
       picture: this.picture,
       id: this.id);
 }
+

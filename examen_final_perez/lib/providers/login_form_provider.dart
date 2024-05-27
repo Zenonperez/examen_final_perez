@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 
-//Provider que manejara las actualizaciones que se realicen en el form y verificar que los campos se validen correctamente.
 class LoginFormProvider extends ChangeNotifier {
   GlobalKey<FormState> formKey = new GlobalKey<FormState>();
 

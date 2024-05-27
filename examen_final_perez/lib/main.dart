@@ -8,15 +8,17 @@ import 'package:provider/provider.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 void main() async {
-  WidgetsFlutterBinding.ensureInitialized();
+   WidgetsFlutterBinding.ensureInitialized();
   final bool estaConectado = await loginStatus();
+  runApp(
   MultiProvider(
       providers: [
         ChangeNotifierProvider(create: (_) => FoodProvider()),
         ChangeNotifierProvider(create: (_) => LoginFormProvider()),
       ],
       child: 
-MyApp(estaConectado: estaConectado));
+MyApp(estaConectado: estaConectado))
+  );
 }
 
 Future<bool> loginStatus() async {

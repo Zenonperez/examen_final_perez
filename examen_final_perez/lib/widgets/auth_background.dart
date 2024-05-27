@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-//Widget que se encarga de la estetica de fondo de pantalla de la login screen.
+
 class AuthBackground extends StatelessWidget {
   final Widget child;
 
